@@ -34,24 +34,19 @@
 <body><!--網頁顯示主體>-->
     <!--<form method="post" action="menu.php">-->
     Your BMI is: <?php echo $BMI."<br /> 狀態:  ".$str;
+    
+    if(!isset($_COOKIE['c']))
+        setcookie('c',1);
+    else{
+        setcookie('c',$_COOKIE['c']+1);
+    }
+        
+    print("<br />這是你第 ".$_COOKIE['c']." 次計算BMI");
     ?>
     <br/>
+    <a href="test.php">返回</a>     
     
-    // back to test.php after 5 seconds and please print how many seconds left to back to test.php
-    <script>
-        var time = 5;
-        var timer = setInterval(function(){
-            document.clear();
-            time--;
-            if(time == 0){
-                clearInterval(timer);
-                window.location = "test.php";
-            }
-            else{
-                document.write("還有"+time+"秒回到主頁");
-            }
-        },1000);
-    </script>          
+        
 
 </body>
 </html><!--html程式結束-->
