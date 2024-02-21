@@ -34,14 +34,14 @@
 <body><!--網頁顯示主體>-->
     <!--<form method="post" action="menu.php">-->
     Your BMI is: <?php echo $BMI."<br /> 狀態:  ".$str;
-    
+    print("<br />這是上一次你第 ".$_COOKIE['c']." 次計算BMI");
     if(!isset($_COOKIE['c']))
         setcookie('c',1);
     else{
         setcookie('c',$_COOKIE['c']+1);
     }
         
-    print("<br />這是你第 ".$_COOKIE['c']." 次計算BMI");
+    print("<br />這是這次你第  ".$_COOKIE['c']." 次計算BMI");
     ?>
     <br/>
     <a href="test.php">返回</a>     
